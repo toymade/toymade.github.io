@@ -1,0 +1,22 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Radius & Borders</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  body { padding: 28px; gap: 32px; flex-direction: row; align-items: center; justify-content: space-around; }
+  .item { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .box { width: 80px; height: 80px; background: var(--tm-black); }
+  .b1 { border-radius: 0; }
+  .b2 { border-radius: 2px; }
+  .b3 { border-radius: 999px; background: transparent; border: 1px solid var(--tm-black); width: auto; height: auto; padding: 8px 16px; font-family: var(--font-body); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; }
+  .b4 { background: transparent; border: 2px solid var(--tm-black); }
+  .b5 { background: transparent; border: 4px solid var(--tm-red); }
+  .lbl { font-family: var(--font-body); font-weight: 700; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; }
+  .meta { font-size: 10px; color: var(--fg-muted); letter-spacing: 0.08em; }
+</style>
+</head><body>
+<div class="item"><div class="box b1"></div><div class="lbl">r-0</div><div class="meta">default</div></div>
+<div class="item"><div class="box b2"></div><div class="lbl">r-2</div><div class="meta">subtle</div></div>
+<div class="item"><div class="b3">pill · tag</div><div class="lbl">r-pill</div><div class="meta">tags only</div></div>
+<div class="item"><div class="box b4"></div><div class="lbl">bw-2</div><div class="meta">2px stroke</div></div>
+<div class="item"><div class="box b5"></div><div class="lbl">bw-4</div><div class="meta">4px / red</div></div>
+</body></html>

@@ -1,0 +1,20 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Motion Easing</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  body { padding: 24px 28px; gap: 14px; justify-content: center; }
+  .row { display: grid; grid-template-columns: 110px 1fr 90px; align-items: center; gap: 16px; }
+  .lbl { font-family: var(--font-body); font-weight: 700; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; }
+  .track { height: 4px; background: var(--tm-ink-200); position: relative; }
+  .ball { position: absolute; top: -4px; width: 12px; height: 12px; background: var(--tm-red); border-radius: 999px; left: 0; animation-duration: 2.4s; animation-iteration-count: infinite; animation-direction: alternate; }
+  .e1 { animation-name: m; animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1); }
+  .e2 { animation-name: m; animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1); }
+  .e3 { animation-name: m; animation-timing-function: linear; }
+  @keyframes m { from { left: 0 } to { left: calc(100% - 12px) } }
+  .meta { font-size: 10px; color: var(--fg-muted); letter-spacing: 0.06em; text-align: right; }
+</style>
+</head><body>
+<div class="row"><div class="lbl">ease-out</div><div class="track"><div class="ball e1"></div></div><div class="meta">240ms · signature</div></div>
+<div class="row"><div class="lbl">ease-in-out</div><div class="track"><div class="ball e2"></div></div><div class="meta">240ms</div></div>
+<div class="row"><div class="lbl">linear</div><div class="track"><div class="ball e3"></div></div><div class="meta">marquee only</div></div>
+</body></html>

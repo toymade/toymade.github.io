@@ -1,0 +1,19 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Hover · Press · Focus</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  body { padding: 24px 28px; flex-direction: row; gap: 18px; align-items: center; justify-content: center; flex-wrap: wrap; }
+  .item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .lbl { font-family: var(--font-body); font-weight: 700; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--fg-muted); }
+  .demo { width: 140px; height: 56px; display: flex; align-items: center; justify-content: center; font-family: var(--font-body); font-weight: 600; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; }
+  .rest { background: var(--tm-black); color: #fff; }
+  .hover { background: var(--tm-red); color: #fff; transform: translateY(-2px); }
+  .press { background: #C70710; color: #fff; transform: scale(0.97); }
+  .focus { background: var(--tm-white); color: var(--tm-black); outline: 2px solid var(--tm-red); outline-offset: 2px; }
+</style>
+</head><body>
+<div class="item"><div class="demo rest">Default</div><div class="lbl">Rest</div></div>
+<div class="item"><div class="demo hover">Hover →</div><div class="lbl">Hover · −2y · red</div></div>
+<div class="item"><div class="demo press">Press</div><div class="lbl">Press · 0.97</div></div>
+<div class="item"><div class="demo focus">Focus</div><div class="lbl">Focus · red ring</div></div>
+</body></html>

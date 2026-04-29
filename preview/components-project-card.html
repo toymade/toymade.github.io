@@ -1,0 +1,30 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Project Card</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  body { padding: 0; }
+  .card { display: grid; grid-template-columns: 240px 1fr; height: 100%; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); cursor: pointer; transition: background 240ms; }
+  .card:hover { background: var(--tm-black); color: var(--tm-white); }
+  .thumb { background: var(--tm-ink-200); position: relative; overflow: hidden; }
+  .thumb::after { content: ""; position: absolute; inset: 0; background: linear-gradient(135deg, var(--tm-red), var(--tm-black)); }
+  .body { padding: 24px 28px; display: flex; flex-direction: column; justify-content: space-between; }
+  .num { font-family: var(--font-body); font-size: 11px; letter-spacing: 0.18em; font-weight: 600; color: var(--fg-muted); }
+  .ttl { font-family: var(--font-display); font-weight: 800; font-size: 36px; line-height: 0.95; text-transform: uppercase; letter-spacing: -0.01em; }
+  .meta { display: flex; gap: 16px; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 500; color: var(--fg-muted); }
+  .arrow { font-size: 18px; transition: transform 240ms; }
+  .card:hover .arrow { transform: translateX(8px); color: var(--tm-red); }
+  .card:hover .meta { color: var(--tm-ink-300); }
+</style>
+</head><body>
+<div class="card">
+  <div class="thumb"></div>
+  <div class="body">
+    <div><div class="num">— 03 / 24</div></div>
+    <div class="ttl">Soft Machines<br/>v.02</div>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;">
+      <div class="meta"><span>WebGL</span><span>Branding</span><span>2025</span></div>
+      <div class="arrow">→</div>
+    </div>
+  </div>
+</div>
+</body></html>

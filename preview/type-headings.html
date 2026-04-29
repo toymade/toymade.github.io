@@ -1,0 +1,19 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Heading Scale</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  body { padding: 16px 28px; gap: 4px; justify-content: flex-start; }
+  .row { display: grid; grid-template-columns: 64px 1fr 220px; align-items: baseline; gap: 16px; padding: 4px 0; border-bottom: 1px solid var(--line); }
+  .tag { font-family: var(--font-body); font-weight: 700; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--fg-muted); }
+  .h1 { font-family: "Barlow", sans-serif; font-weight: 900; font-size: 48px; line-height: 1; letter-spacing: -0.04em; }
+  .h2 { font-family: "Barlow", sans-serif; font-weight: 800; font-size: 32px; line-height: 1; letter-spacing: -0.03em; }
+  .h3 { font-family: "Barlow", sans-serif; font-weight: 700; font-size: 22px; line-height: 1; letter-spacing: -0.02em; }
+  .h4 { font-family: "Barlow", sans-serif; font-weight: 600; font-size: 18px; letter-spacing: -0.01em; }
+  .spec { font-size: 11px; letter-spacing: 0.08em; color: var(--fg-muted); }
+</style>
+</head><body>
+<div class="row"><div class="tag">H1</div><div class="h1">Display</div><div class="spec">Barlow / 900 / 48–192</div></div>
+<div class="row"><div class="tag">H2</div><div class="h2">Section title</div><div class="spec">Barlow / 800 / 48–96</div></div>
+<div class="row"><div class="tag">H3</div><div class="h3">Subsection</div><div class="spec">Barlow / 700 / 32</div></div>
+<div class="row"><div class="tag">H4</div><div class="h4">Card title</div><div class="spec">Barlow / 600 / 24</div></div>
+</body></html>

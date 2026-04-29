@@ -1,0 +1,23 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Buttons</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  body { padding: 24px; flex-direction: row; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: center; }
+  .btn { font-family: var(--font-body); font-weight: 600; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; padding: 14px 22px; cursor: pointer; transition: all 200ms cubic-bezier(0.22,1,0.36,1); border: 0; display: inline-flex; align-items: center; gap: 10px; }
+  .btn-primary { background: var(--tm-black); color: var(--tm-white); }
+  .btn-primary:hover { background: var(--tm-red); }
+  .btn-ghost { background: transparent; color: var(--tm-black); border: 1px solid var(--tm-black); }
+  .btn-ghost:hover { background: var(--tm-black); color: var(--tm-white); }
+  .btn-red { background: var(--tm-red); color: #fff; }
+  .btn-red:hover { background: #C70710; }
+  .btn-link { padding: 0; background: transparent; color: var(--tm-black); border-bottom: 1px solid currentColor; padding-bottom: 4px; }
+  .btn-link:hover { color: var(--tm-red); }
+  .arrow { font-size: 14px; transition: transform 200ms; }
+  .btn:hover .arrow { transform: translateX(4px); }
+</style>
+</head><body>
+<button class="btn btn-primary">View work <span class="arrow">→</span></button>
+<button class="btn btn-ghost">About</button>
+<button class="btn btn-red">Get in touch</button>
+<button class="btn btn-link">Read more <span class="arrow">→</span></button>
+</body></html>

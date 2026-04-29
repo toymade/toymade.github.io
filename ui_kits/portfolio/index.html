@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=1440"/>
+<title>TOYMADE — Studio</title>
+<link rel="stylesheet" href="portfolio.css"/>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="Components.jsx"></script>
+<script type="text/babel">
+const { useState } = React;
+
+const PROJECTS = [
+  { id: "p1", title: "Soft Machines", short: "SOFT MACHINES", tags: ["WebGL","Brand"], year: "2025", discipline: "Web · 3D" },
+  { id: "p2", title: "Atlas of Type", short: "ATLAS", tags: ["Editorial","Site"], year: "2024", discipline: "Editorial" },
+  { id: "p3", title: "Folder Studio", short: "FOLDER", tags: ["Identity","Print"], year: "2024", discipline: "Brand" },
+  { id: "p4", title: "Half Past Eight", short: "HALF PAST", tags: ["App","Motion"], year: "2024", discipline: "Product" },
+  { id: "p5", title: "Sundown FM", short: "SUNDOWN FM", tags: ["Audio","Web"], year: "2023", discipline: "Web" },
+  { id: "p6", title: "Nine Lives", short: "9 LIVES", tags: ["Game","WebGL"], year: "2023", discipline: "Toy" },
+];
+
+function App() {
+  const [view, setView] = useState("home");
+  const [project, setProject] = useState(null);
+
+  const openProject = (p) => { setProject(p); setView("project"); };
+
+  return (
+    <div data-screen-label={view === "home" ? "01 Home" : view === "project" ? "02 Project" : "03 " + view}>
+      <Cursor/>
+      <Nav active={view === "home" ? "work" : view} onNav={(v) => { setView(v === "home" ? "home" : v); setProject(null); }}/>
+
+      {view === "home" && (
+        <>
+          <Hero/>
+          <Marquee items={["Selected work","2024 → 2025","Independent studio","Made with care","Lisbon · Berlin"]}/>
+          <WorkList projects={PROJECTS} onOpen={openProject}/>
+          <div className="tm-grid">
+            <GridCard p={PROJECTS[0]} big onOpen={openProject}/>
+            <GridCard p={PROJECTS[1]} onOpen={openProject}/>
+            <GridCard p={PROJECTS[2]} onOpen={openProject}/>
+          </div>
+          <About/>
+          <Footer/>
+        </>
+      )}
+
+      {view === "project" && project && (
+        <>
+          <section className="tm-hero" style={{paddingTop:"160px"}}>
+            <div className="tm-hero-eyebrow">— Project · {project.discipline} · {project.year}</div>
+            <h1>{project.title.split(" ").map((w,i,a) => (
+              <span key={i}>{i === a.length-1 ? <span className="red">{w}.</span> : w}{i < a.length-1 ? <br/> : null}</span>
+            ))}</h1>
+            <div className="tm-hero-foot">
+              <div><div className="lbl">Client</div><div className="val">Confidential</div></div>
+              <div><div className="lbl">Year</div><div className="val">{project.year}</div></div>
+              <div><div className="lbl">Discipline</div><div className="val">{project.discipline}</div></div>
+              <div><div className="lbl">Status</div><div className="val">Shipped</div></div>
+            </div>
+          </section>
+          <div style={{padding:"80px 40px"}}>
+            <div style={{aspectRatio:"16/9", background:"linear-gradient(135deg, #E50914, #0A0A0A)"}}></div>
+          </div>
+          <Footer/>
+        </>
+      )}
+
+      {view === "lab" && (
+        <>
+          <section className="tm-section" style={{paddingTop:"160px"}}>
+            <div className="tm-section-head">
+              <span className="eyebrow">Lab · experiments</span>
+              <h2>Lab<span style={{color:"var(--tm-red)"}}>.</span></h2>
+            </div>
+            <div className="tm-grid" style={{padding:"60px 0 0"}}>
+              {PROJECTS.slice(0,4).map(p => <GridCard key={p.id} p={p} onOpen={openProject}/>)}
+            </div>
+          </section>
+          <Footer/>
+        </>
+      )}
+
+      {view === "about" && (
+        <>
+          <section className="tm-section" style={{paddingTop:"160px"}}>
+            <div className="tm-section-head">
+              <span className="eyebrow">Studio · since 2019</span>
+              <h2>About<span style={{color:"var(--tm-red)"}}>.</span></h2>
+            </div>
+            <div style={{padding:"60px 0", maxWidth:"60ch"}}>
+              <p style={{fontSize:"24px",lineHeight:"1.4",fontWeight:"300"}}>Toymade is an independent studio of two — building digital interfaces for brands and people who care about typography, motion, and the silence between elements.</p>
+            </div>
+          </section>
+          <About/>
+          <Footer/>
+        </>
+      )}
+
+      {view === "journal" && (
+        <>
+          <section className="tm-section" style={{paddingTop:"160px"}}>
+            <div className="tm-section-head">
+              <span className="eyebrow">Journal · notes</span>
+              <h2>Journal<span style={{color:"var(--tm-red)"}}>.</span></h2>
+            </div>
+            <div style={{padding:"40px 0"}}>
+              {[
+                {d:"04/24/25", t:"On the value of restraint", k:"Essay"},
+                {d:"04/02/25", t:"Heavy type, light layouts", k:"Essay"},
+                {d:"03/15/25", t:"Notes from a launch week", k:"Diary"},
+                {d:"02/28/25", t:"Why we still draw on paper", k:"Process"},
+              ].map((r, i) => (
+                <div key={i} className="tm-work-row" data-cursor="read">
+                  <div className="tm-work-num">{String(i+1).padStart(3,"0")}</div>
+                  <div className="tm-work-title">{r.t}</div>
+                  <div className="tm-work-tags"><span>{r.k}</span></div>
+                  <div className="tm-work-year">{r.d}</div>
+                  <div className="tm-work-arrow">→</div>
+                </div>
+              ))}
+            </div>
+          </section>
+          <Footer/>
+        </>
+      )}
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+</script>
+</body></html>

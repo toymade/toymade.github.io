@@ -1,0 +1,24 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Semantic Tokens</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  body { padding: 24px 32px; gap: 12px; }
+  .row { display: grid; grid-template-columns: 180px 1fr 200px; align-items: center; gap: 16px; }
+  .token { font-family: var(--font-body); font-weight: 700; font-size: 13px; letter-spacing: 0.06em; }
+  .desc { font-size: 12px; color: var(--fg-muted); letter-spacing: 0.02em; }
+  .chip { height: 28px; border: 1px solid var(--line); display: flex; align-items: center; padding: 0 10px; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; }
+  .c-fg { background: #0A0A0A; color: #FAFAFA; border-color: #0A0A0A; }
+  .c-fg-muted { background: #5C5C5C; color: #FAFAFA; border-color: #5C5C5C; }
+  .c-bg { background: #FAFAFA; color: #0A0A0A; }
+  .c-line { background: #FAFAFA; color: #0A0A0A; border: 2px solid #E5E5E5; }
+  .c-accent { background: #E50914; color: #FFFFFF; border-color: #E50914; }
+  .c-inv { background: #0A0A0A; color: #FAFAFA; border-color: #0A0A0A; }
+</style>
+</head><body>
+<div class="row"><div class="token">--fg</div><div class="desc">Primary text & icons</div><div class="chip c-fg">#0A0A0A</div></div>
+<div class="row"><div class="token">--fg-muted</div><div class="desc">Secondary text, meta</div><div class="chip c-fg-muted">#5C5C5C</div></div>
+<div class="row"><div class="token">--bg</div><div class="desc">Default surface</div><div class="chip c-bg">#FAFAFA</div></div>
+<div class="row"><div class="token">--line</div><div class="desc">Dividers, hairlines</div><div class="chip c-line">#E5E5E5</div></div>
+<div class="row"><div class="token">--accent</div><div class="desc">Sole accent — signal red</div><div class="chip c-accent">#E50914</div></div>
+<div class="row"><div class="token">--bg-inverse</div><div class="desc">Dark sections, footer</div><div class="chip c-inv">#0A0A0A</div></div>
+</body></html>

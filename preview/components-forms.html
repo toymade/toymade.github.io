@@ -1,0 +1,19 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Form Inputs</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  body { padding: 24px 32px; gap: 14px; justify-content: center; }
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  label { font-family: var(--font-body); font-weight: 600; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--fg-muted); }
+  .inp { font-family: var(--font-body); font-size: 14px; padding: 10px 0; border: 0; border-bottom: 1px solid var(--tm-black); background: transparent; outline: none; transition: border-color 200ms; }
+  .inp:focus { border-color: var(--tm-red); }
+  .inp::placeholder { color: var(--tm-ink-400); }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+</style>
+</head><body>
+<div class="row">
+  <div class="field"><label>Name</label><input class="inp" placeholder="Full name"/></div>
+  <div class="field"><label>Email</label><input class="inp" placeholder="you@studio.com"/></div>
+</div>
+<div class="field"><label>Project brief</label><input class="inp" placeholder="What are you trying to make?"/></div>
+</body></html>

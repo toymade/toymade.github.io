@@ -1,0 +1,30 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Core Palette</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  body { padding: 0; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; height: 100%; }
+  .swatch { position: relative; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; }
+  .swatch .name { font-family: var(--font-display); font-weight: 900; font-size: 28px; text-transform: uppercase; letter-spacing: -0.01em; }
+  .swatch .hex { font-family: var(--font-body); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.8; }
+  .swatch .role { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.6; margin-bottom: 4px; }
+  .black { background: var(--tm-black); color: var(--tm-white); }
+  .white { background: var(--tm-white); color: var(--tm-black); border-right: 1px solid var(--line); border-left: 1px solid var(--line); }
+  .red { background: var(--tm-red); color: var(--tm-white); }
+</style>
+</head><body>
+<div class="grid">
+  <div class="swatch black">
+    <div><div class="role">Ink</div><div class="name">Black</div></div>
+    <div class="hex">#0A0A0A · --tm-black</div>
+  </div>
+  <div class="swatch white">
+    <div><div class="role">Surface</div><div class="name">White</div></div>
+    <div class="hex">#FAFAFA · --tm-white</div>
+  </div>
+  <div class="swatch red">
+    <div><div class="role">Accent</div><div class="name">Red</div></div>
+    <div class="hex">#E50914 · --tm-red</div>
+  </div>
+</div>
+</body></html>

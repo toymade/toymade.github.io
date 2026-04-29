@@ -1,0 +1,21 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Cursor & Marquee</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  body { padding: 0; background: var(--tm-black); color: #fff; }
+  .marquee { overflow: hidden; padding: 16px 0; border-top: 1px solid #222; border-bottom: 1px solid #222; }
+  .track { display: flex; gap: 32px; white-space: nowrap; animation: scroll 18s linear infinite; font-family: var(--font-display); font-weight: 900; font-size: 32px; text-transform: uppercase; letter-spacing: -0.01em; }
+  .track span { display: inline-flex; align-items: center; gap: 32px; }
+  .track .dot { width: 10px; height: 10px; background: var(--tm-red); border-radius: 999px; }
+  @keyframes scroll { from { transform: translateX(0) } to { transform: translateX(-50%) } }
+  .row { padding: 16px 28px; display: flex; align-items: center; gap: 18px; }
+  .cursor { width: 80px; height: 80px; border-radius: 999px; background: var(--tm-red); display: flex; align-items: center; justify-content: center; font-family: var(--font-body); font-weight: 700; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; }
+  .lbl { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #888; }
+</style>
+</head><body>
+<div class="marquee"><div class="track">
+  <span>Selected work<span class="dot"></span></span><span>2024 → 2025<span class="dot"></span></span><span>Independent studio<span class="dot"></span></span><span>Made with care<span class="dot"></span></span>
+  <span>Selected work<span class="dot"></span></span><span>2024 → 2025<span class="dot"></span></span><span>Independent studio<span class="dot"></span></span><span>Made with care<span class="dot"></span></span>
+</div></div>
+<div class="row"><div class="cursor">View →</div><div class="lbl">Custom cursor (hover state) · 80px / red / track scale on idle</div></div>
+</body></html>

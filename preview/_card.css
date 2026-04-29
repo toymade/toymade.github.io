@@ -1,0 +1,18 @@
+/* Shared style for all preview cards */
+@import url("../colors_and_type.css");
+
+html, body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  overflow: hidden;
+}
+body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.row { display: flex; align-items: center; gap: 16px; }
+.col { display: flex; flex-direction: column; gap: 16px; }
+.divider { height: 1px; background: var(--line); width: 100%; }

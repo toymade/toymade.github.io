@@ -1,0 +1,21 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Tags & Badges</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  body { padding: 28px; flex-direction: row; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: center; }
+  .tag { font-family: var(--font-body); font-weight: 600; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--tm-black); }
+  .tag-solid { background: var(--tm-black); color: var(--tm-white); border-color: var(--tm-black); }
+  .tag-red { background: var(--tm-red); color: #fff; border-color: var(--tm-red); }
+  .tag-dot { display: inline-flex; align-items: center; gap: 8px; }
+  .dot { width: 6px; height: 6px; border-radius: 999px; background: var(--tm-red); animation: blink 1.4s infinite; }
+  @keyframes blink { 50% { opacity: 0.3; } }
+  .badge { font-family: var(--font-display); font-weight: 800; font-size: 14px; padding: 4px 8px; background: var(--tm-red); color: #fff; }
+</style>
+</head><body>
+<span class="tag">Web</span>
+<span class="tag">3D · WebGL</span>
+<span class="tag tag-solid">Code</span>
+<span class="tag tag-red">2025</span>
+<span class="tag tag-dot"><span class="dot"></span>Live now</span>
+<span class="badge">NEW</span>
+</body></html>

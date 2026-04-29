@@ -1,0 +1,397 @@
+/* =========================================================================
+   TOYMADE — Colors & Type
+   Black. White. One red. Big condensed type, generous negative space.
+   ========================================================================= */
+
+/* ------------------------------- FONTS ----------------------------------- */
+@font-face {
+  font-family: "Barlow";
+  src: url("fonts/Barlow-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Barlow";
+  src: url("fonts/Barlow-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Barlow";
+  src: url("fonts/Barlow-Italic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Barlow";
+  src: url("fonts/Barlow-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Barlow";
+  src: url("fonts/Barlow-SemiBold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Barlow";
+  src: url("fonts/Barlow-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Barlow";
+  src: url("fonts/Barlow-BoldItalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Barlow";
+  src: url("fonts/Barlow-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Barlow Condensed";
+  src: url("fonts/BarlowCondensed-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Barlow Condensed";
+  src: url("fonts/BarlowCondensed-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Barlow Condensed";
+  src: url("fonts/BarlowCondensed-SemiBold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Barlow Condensed";
+  src: url("fonts/BarlowCondensed-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Barlow Condensed";
+  src: url("fonts/BarlowCondensed-ExtraBold.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Barlow Condensed";
+  src: url("fonts/BarlowCondensed-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ------------------------------ TOKENS ----------------------------------- */
+:root {
+  /* RAW PALETTE — strictly three values + neutrals */
+  --tm-black: #0A0A0A;          /* near-black, never pure #000 (less harsh) */
+  --tm-white: #FAFAFA;           /* near-white, slightly warm */
+  --tm-red:   #E50914;           /* signal red — sole accent */
+
+  /* NEUTRAL SCALE (for borders, dividers, muted text) */
+  --tm-ink-100: #F2F2F2;
+  --tm-ink-200: #E5E5E5;
+  --tm-ink-300: #C7C7C7;
+  --tm-ink-400: #8A8A8A;
+  --tm-ink-500: #5C5C5C;
+  --tm-ink-600: #2E2E2E;
+  --tm-ink-700: #1A1A1A;
+
+  /* SEMANTIC — light surface (default) */
+  --bg:           var(--tm-white);
+  --bg-elevated: #FFFFFF;
+  --bg-inverse:  var(--tm-black);
+
+  --fg:          var(--tm-black);
+  --fg-muted:    var(--tm-ink-500);
+  --fg-subtle:   var(--tm-ink-400);
+  --fg-inverse:  var(--tm-white);
+
+  --line:        var(--tm-ink-200);
+  --line-strong: var(--tm-black);
+
+  --accent:      var(--tm-red);
+  --accent-hover:#C70710;
+  --accent-fg:   var(--tm-white);
+
+  --selection-bg: var(--tm-red);
+  --selection-fg: var(--tm-white);
+
+  /* TYPE */
+  --font-display: "Barlow", "Inter", system-ui, -apple-system, sans-serif;
+  --font-body:    "Barlow", "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono:    "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* SIZE SCALE — display-led */
+  --fs-12:  0.75rem;     /* 12 — micro, eyebrow */
+  --fs-14:  0.875rem;    /* 14 — caption, meta */
+  --fs-16:  1rem;        /* 16 — body */
+  --fs-18:  1.125rem;    /* 18 — body-lg */
+  --fs-24:  1.5rem;
+  --fs-32:  2rem;
+  --fs-48:  3rem;
+  --fs-64:  4rem;
+  --fs-96:  6rem;
+  --fs-144: 9rem;
+  --fs-192: 12rem;       /* hero / numerals */
+
+  /* WEIGHTS — keep narrow vocabulary */
+  --fw-light:  300;
+  --fw-reg:    400;
+  --fw-med:    500;
+  --fw-semi:   600;
+  --fw-bold:   700;
+  --fw-black:  900;
+
+  /* LINE HEIGHT */
+  --lh-tight:  0.9;        /* display headlines */
+  --lh-snug:   1.05;       /* large headings */
+  --lh-norm:   1.4;        /* body */
+  --lh-loose:  1.6;        /* long-form */
+
+  /* TRACKING */
+  --ls-tight:   -0.02em;
+  --ls-norm:     0em;
+  --ls-wide:     0.04em;
+  --ls-eyebrow:  0.18em;   /* uppercase eyebrow text */
+
+  /* SPACING — 4px base */
+  --sp-1:  4px;
+  --sp-2:  8px;
+  --sp-3:  12px;
+  --sp-4:  16px;
+  --sp-5:  24px;
+  --sp-6:  32px;
+  --sp-7:  48px;
+  --sp-8:  64px;
+  --sp-9:  96px;
+  --sp-10: 144px;
+  --sp-11: 200px;
+
+  /* RADII — minimal: 0 (default), 2 (subtle), 999 (pill for tags) */
+  --r-0: 0px;
+  --r-2: 2px;
+  --r-pill: 999px;
+
+  /* BORDERS */
+  --bw-1: 1px;
+  --bw-2: 2px;
+  --bw-4: 4px;
+
+  /* ELEVATION — shadows are rarely used. Reserved for floating UI only. */
+  --shadow-sm: 0 2px 6px rgba(10,10,10,0.06);
+  --shadow-md: 0 8px 24px rgba(10,10,10,0.10);
+  --shadow-lg: 0 24px 60px rgba(10,10,10,0.14);
+
+  /* MOTION */
+  --ease-out:      cubic-bezier(0.22, 1, 0.36, 1);     /* expo-out, signature */
+  --ease-in-out:   cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-stand:    cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast:   140ms;
+  --dur-base:   240ms;
+  --dur-slow:   480ms;
+  --dur-xslow:  900ms;
+
+  /* GRID */
+  --gutter:      24px;
+  --container:   1440px;
+  --content:     1180px;
+
+  /* OVERLAYS */
+  --scrim:       rgba(10,10,10,0.65);
+  --scrim-soft:  rgba(10,10,10,0.30);
+}
+
+/* DARK SURFACE — applied via [data-theme="dark"] OR section styling */
+[data-theme="dark"], .tm-dark {
+  --bg:           var(--tm-black);
+  --bg-elevated:  var(--tm-ink-700);
+  --bg-inverse:   var(--tm-white);
+  --fg:           var(--tm-white);
+  --fg-muted:     var(--tm-ink-300);
+  --fg-subtle:    var(--tm-ink-400);
+  --fg-inverse:   var(--tm-black);
+  --line:         var(--tm-ink-600);
+  --line-strong:  var(--tm-white);
+  --accent-fg:    var(--tm-white);
+}
+
+/* ------------------------------ ELEMENTS --------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+::selection { background: var(--selection-bg); color: var(--selection-fg); }
+
+html, body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: var(--fs-16);
+  line-height: var(--lh-norm);
+  font-weight: var(--fw-reg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* HEADINGS — display family, condensed, uppercase by default at hero level */
+h1, .h1 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-black);
+  font-size: clamp(var(--fs-64), 11vw, var(--fs-192));
+  line-height: 0.88;
+  letter-spacing: -0.04em;
+  margin: 0;
+}
+h2, .h2 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-black);
+  font-size: clamp(var(--fs-48), 6vw, var(--fs-96));
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+h3, .h3 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-32);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+h4, .h4 {
+  font-family: var(--font-body);
+  font-weight: var(--fw-semi);
+  font-size: var(--fs-24);
+  line-height: var(--lh-snug);
+  margin: 0;
+}
+h5, .h5 {
+  font-family: var(--font-body);
+  font-weight: var(--fw-semi);
+  font-size: var(--fs-18);
+  line-height: var(--lh-norm);
+  margin: 0;
+}
+
+p {
+  font-size: var(--fs-16);
+  line-height: var(--lh-loose);
+  color: var(--fg);
+  margin: 0 0 var(--sp-4) 0;
+  text-wrap: pretty;
+  max-width: 65ch;
+}
+
+/* EYEBROW — small uppercase label, often above headings */
+.eyebrow {
+  font-family: var(--font-body);
+  font-weight: var(--fw-med);
+  font-size: var(--fs-12);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--fg);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: currentColor;
+}
+
+/* META — tiny mono-like info, e.g. timestamps, indexes */
+.meta {
+  font-family: var(--font-body);
+  font-weight: var(--fw-med);
+  font-size: var(--fs-12);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+/* LEAD — opening paragraph */
+.lead {
+  font-size: var(--fs-24);
+  line-height: 1.35;
+  font-weight: var(--fw-light);
+  color: var(--fg);
+  max-width: 30ch;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  position: relative;
+  transition: color var(--dur-fast) var(--ease-stand);
+}
+a.tm-link {
+  display: inline-block;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: background-size var(--dur-base) var(--ease-out), color var(--dur-fast);
+}
+a.tm-link:hover {
+  background-size: 0% 1px;
+  background-position: 100% 100%;
+  color: var(--accent);
+}
+a.tm-link.is-red { color: var(--accent); }
+
+code, kbd, pre {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+
+/* GIANT NUMERAL — used for index tags, counters */
+.numeral {
+  font-family: var(--font-display);
+  font-weight: var(--fw-black);
+  font-size: var(--fs-144);
+  line-height: 0.8;
+  letter-spacing: -0.04em;
+}
+
+/* MARK — red highlight on inline text */
+mark, .mark {
+  background: var(--tm-red);
+  color: var(--tm-white);
+  padding: 0 0.15em;
+}
+
+/* HORIZONTAL RULE — strong */
+hr.tm-rule {
+  border: 0;
+  border-top: var(--bw-1) solid var(--line-strong);
+  margin: var(--sp-7) 0;
+}
