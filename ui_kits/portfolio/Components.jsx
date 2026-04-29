@@ -30,6 +30,9 @@ function Cursor() {
 
 function Nav({ active = "work", onNav }) {
   const items = ["work", "lab", "journal", "about", "contact"];
+  const [open, setOpen] = useState(false);
+  useEffect(() => { document.body.style.overflow = open ? "hidden" : ""; }, [open]);
+  const go = (v) => { setOpen(false); onNav && onNav(v); };
   return (
     <>
       <div className="tm-topbar">
@@ -49,6 +52,18 @@ function Nav({ active = "work", onNav }) {
           </ul>
         </div>
       </nav>
+      <button className={"tm-burger" + (open ? " is-open" : "")} onClick={() => setOpen(!open)} aria-label="Menu">
+        <span className="bars"><span></span><span></span><span></span></span>
+      </button>
+      <div className={"tm-mobile-menu" + (open ? " is-open" : "")}>
+        {items.map(i => (
+          <a key={i} onClick={() => go(i)}>{i}<span style={{color:"var(--tm-red)"}}>.</span></a>
+        ))}
+        <div className="foot">
+          <span>Open · 9–5 · Mon–Fri</span>
+          <span>hi@toymade.studio</span>
+        </div>
+      </div>
     </>
   );
 }
